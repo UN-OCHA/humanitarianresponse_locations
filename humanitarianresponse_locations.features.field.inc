@@ -55,7 +55,7 @@ function humanitarianresponse_locations_field_default_fields() {
       'entity_type' => 'taxonomy_term',
       'field_name' => 'field_location_pcode',
       'label' => 'PCode',
-      'required' => 0,
+      'required' => 1,
       'settings' => array(
         'text_processing' => '0',
         'user_register_form' => FALSE,
