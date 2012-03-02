@@ -10,6 +10,62 @@
 function humanitarianresponse_locations_field_default_fields() {
   $fields = array();
 
+  // Exported field: 'taxonomy_term-locations-field_location'
+  $fields['taxonomy_term-locations-field_location'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_location',
+      'foreign keys' => array(),
+      'indexes' => array(),
+      'module' => 'geofield',
+      'settings' => array(),
+      'translatable' => '0',
+      'type' => 'geofield',
+    ),
+    'field_instance' => array(
+      'bundle' => 'locations',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'geofield',
+          'settings' => array(
+            'data' => 'full',
+          ),
+          'type' => 'geofield_wkt',
+          'weight' => 1,
+        ),
+      ),
+      'entity_type' => 'taxonomy_term',
+      'field_name' => 'field_location',
+      'label' => 'Location',
+      'required' => 0,
+      'settings' => array(
+        'local_solr' => array(
+          'enabled' => FALSE,
+          'lat_field' => 'lat',
+          'lng_field' => 'lng',
+        ),
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'geofield',
+        'settings' => array(
+          'data_storage' => 'collection',
+          'openlayers_map' => 'geofield_widget_map',
+        ),
+        'type' => 'geofield_openlayers',
+        'weight' => '31',
+      ),
+    ),
+  );
+
   // Exported field: 'taxonomy_term-locations-field_location_pcode'
   $fields['taxonomy_term-locations-field_location_pcode'] = array(
     'field_config' => array(
@@ -74,6 +130,7 @@ function humanitarianresponse_locations_field_default_fields() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Location');
   t('PCode');
 
   return $fields;
