@@ -10,7 +10,7 @@
 function humanitarianresponse_locations_field_default_fields() {
   $fields = array();
 
-  // Exported field: 'taxonomy_term-locations-field_location'
+  // Exported field: 'taxonomy_term-locations-field_location'.
   $fields['taxonomy_term-locations-field_location'] = array(
     'field_config' => array(
       'active' => '1',
@@ -20,6 +20,7 @@ function humanitarianresponse_locations_field_default_fields() {
       'field_name' => 'field_location',
       'foreign keys' => array(),
       'indexes' => array(),
+      'locked' => '0',
       'module' => 'geofield',
       'settings' => array(),
       'translatable' => '0',
@@ -66,7 +67,7 @@ function humanitarianresponse_locations_field_default_fields() {
     ),
   );
 
-  // Exported field: 'taxonomy_term-locations-field_location_pcode'
+  // Exported field: 'taxonomy_term-locations-field_location_pcode'.
   $fields['taxonomy_term-locations-field_location_pcode'] = array(
     'field_config' => array(
       'active' => '1',
@@ -87,6 +88,7 @@ function humanitarianresponse_locations_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(
         'max_length' => '255',
@@ -128,7 +130,7 @@ function humanitarianresponse_locations_field_default_fields() {
     ),
   );
 
-  // Exported field: 'taxonomy_term-locations-field_location_pop'
+  // Exported field: 'taxonomy_term-locations-field_location_pop'.
   $fields['taxonomy_term-locations-field_location_pop'] = array(
     'field_config' => array(
       'active' => '1',
@@ -149,6 +151,7 @@ function humanitarianresponse_locations_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(
         'max_length' => '20',
