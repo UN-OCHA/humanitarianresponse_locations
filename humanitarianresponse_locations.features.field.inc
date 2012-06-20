@@ -10,6 +10,67 @@
 function humanitarianresponse_locations_field_default_fields() {
   $fields = array();
 
+  // Exported field: 'taxonomy_term-locations-description_field'.
+  $fields['taxonomy_term-locations-description_field'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'description_field',
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'text',
+      'settings' => array(),
+      'translatable' => '1',
+      'type' => 'text_with_summary',
+    ),
+    'field_instance' => array(
+      'bundle' => 'locations',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 4,
+        ),
+      ),
+      'entity_type' => 'taxonomy_term',
+      'field_name' => 'description_field',
+      'label' => 'Description',
+      'required' => FALSE,
+      'settings' => array(
+        'display_summary' => 0,
+        'text_processing' => 1,
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'module' => 'text',
+        'settings' => array(
+          'rows' => 20,
+          'summary_rows' => 5,
+        ),
+        'type' => 'text_textarea_with_summary',
+        'weight' => '1',
+      ),
+    ),
+  );
+
   // Exported field: 'taxonomy_term-locations-field_location'.
   $fields['taxonomy_term-locations-field_location'] = array(
     'field_config' => array(
@@ -62,7 +123,7 @@ function humanitarianresponse_locations_field_default_fields() {
           'openlayers_map' => 'geofield_widget_map',
         ),
         'type' => 'geofield_openlayers',
-        'weight' => '31',
+        'weight' => '4',
       ),
     ),
   );
@@ -125,7 +186,7 @@ function humanitarianresponse_locations_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '0',
+        'weight' => '2',
       ),
     ),
   );
@@ -188,14 +249,77 @@ function humanitarianresponse_locations_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '32',
+        'weight' => '5',
+      ),
+    ),
+  );
+
+  // Exported field: 'taxonomy_term-locations-name_field'.
+  $fields['taxonomy_term-locations-name_field'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'name_field',
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'text',
+      'settings' => array(
+        'max_length' => 255,
+      ),
+      'translatable' => '1',
+      'type' => 'text',
+    ),
+    'field_instance' => array(
+      'bundle' => 'locations',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 3,
+        ),
+      ),
+      'entity_type' => 'taxonomy_term',
+      'field_name' => 'name_field',
+      'label' => 'Name',
+      'required' => TRUE,
+      'settings' => array(
+        'text_processing' => 0,
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'module' => 'text',
+        'settings' => array(
+          'size' => 60,
+        ),
+        'type' => 'text_textfield',
+        'weight' => '0',
       ),
     ),
   );
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Description');
   t('Location');
+  t('Name');
   t('PCode');
   t('Population');
 
