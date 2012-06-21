@@ -5,7 +5,6 @@ package = Humanitarianresponse
 php = 5.2.4
 dependencies[] = features
 dependencies[] = geofield
-dependencies[] = i18n_taxonomy
 dependencies[] = taxonomy
 dependencies[] = title
 features[features_api][] = api:1
