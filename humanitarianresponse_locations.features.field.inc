@@ -134,7 +134,7 @@ function humanitarianresponse_locations_field_default_fields() {
           'data_storage' => 'collection',
           'openlayers_map' => 'geofield_widget_map',
         ),
-        'type' => 'geofield_openlayers',
+        'type' => 'geofield_wkt',
         'weight' => '4',
       ),
     ),
