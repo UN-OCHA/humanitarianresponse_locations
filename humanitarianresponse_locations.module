@@ -3,4 +3,4 @@
  * @file
  */
 
-include_once('humanitarianresponse_locations.features.inc');
+// Drupal needs this blank file.
