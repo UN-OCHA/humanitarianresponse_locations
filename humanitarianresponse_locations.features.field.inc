@@ -141,6 +141,12 @@ function humanitarianresponse_locations_field_default_fields() {
           'type' => 'entityreference_label',
           'weight' => 5,
         ),
+        'ical' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
       ),
       'entity_type' => 'taxonomy_term',
       'field_name' => 'field_information_focal_points',
