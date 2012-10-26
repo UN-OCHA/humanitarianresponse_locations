@@ -10,6 +10,16 @@
 function humanitarianresponse_locations_user_default_permissions() {
   $permissions = array();
 
+  // Exported permission: administer locations vocabulary terms.
+  $permissions['administer locations vocabulary terms'] = array(
+    'name' => 'administer locations vocabulary terms',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'manager',
+    ),
+    'module' => 'vppr',
+  );
+
   // Exported permission: clear csv_locations feeds.
   $permissions['clear csv_locations feeds'] = array(
     'name' => 'clear csv_locations feeds',
