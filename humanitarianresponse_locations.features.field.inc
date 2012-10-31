@@ -104,8 +104,6 @@ function humanitarianresponse_locations_field_default_fields() {
           'module' => 'geofield',
           'settings' => array(
             'data' => 'full',
-            'diff_custom' => 0,
-            'diff_custom_settings' => array(),
           ),
           'type' => 'geofield_wkt',
           'weight' => 1,
@@ -180,10 +178,7 @@ function humanitarianresponse_locations_field_default_fields() {
         'default' => array(
           'label' => 'above',
           'module' => 'text',
-          'settings' => array(
-            'diff_custom' => 0,
-            'diff_custom_settings' => array(),
-          ),
+          'settings' => array(),
           'type' => 'text_default',
           'weight' => '0',
         ),
@@ -252,10 +247,7 @@ function humanitarianresponse_locations_field_default_fields() {
         'default' => array(
           'label' => 'above',
           'module' => 'text',
-          'settings' => array(
-            'diff_custom' => 0,
-            'diff_custom_settings' => array(),
-          ),
+          'settings' => array(),
           'type' => 'text_default',
           'weight' => 2,
         ),
