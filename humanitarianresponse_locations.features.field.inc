@@ -77,96 +77,6 @@ function humanitarianresponse_locations_field_default_fields() {
     ),
   );
 
-  // Exported field: 'taxonomy_term-locations-field_information_focal_points'.
-  $fields['taxonomy_term-locations-field_information_focal_points'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '-1',
-      'deleted' => '0',
-      'entity_types' => array(),
-      'field_name' => 'field_information_focal_points',
-      'field_permissions' => array(
-        'type' => '0',
-      ),
-      'foreign keys' => array(
-        'node' => array(
-          'columns' => array(
-            'target_id' => 'nid',
-          ),
-          'table' => 'node',
-        ),
-      ),
-      'indexes' => array(
-        'target_id' => array(
-          0 => 'target_id',
-        ),
-      ),
-      'locked' => '0',
-      'module' => 'entityreference',
-      'settings' => array(
-        'handler' => 'base',
-        'handler_settings' => array(
-          'behaviors' => array(
-            'views-select-list' => array(
-              'status' => 0,
-            ),
-          ),
-          'sort' => array(
-            'type' => 'none',
-          ),
-          'target_bundles' => array(
-            'contact' => 'contact',
-          ),
-        ),
-        'handler_submit' => 'Change handler',
-        'target_type' => 'node',
-      ),
-      'translatable' => '0',
-      'type' => 'entityreference',
-    ),
-    'field_instance' => array(
-      'bundle' => 'locations',
-      'default_value' => NULL,
-      'deleted' => '0',
-      'description' => '',
-      'display' => array(
-        'default' => array(
-          'label' => 'above',
-          'module' => 'entityreference',
-          'settings' => array(
-            'diff_custom' => 0,
-            'diff_custom_settings' => array(),
-            'link' => FALSE,
-          ),
-          'type' => 'entityreference_label',
-          'weight' => 5,
-        ),
-      ),
-      'entity_type' => 'taxonomy_term',
-      'field_name' => 'field_information_focal_points',
-      'label' => 'Information Focal Points',
-      'required' => 0,
-      'settings' => array(
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 1,
-        'module' => 'entityreference',
-        'settings' => array(
-          'match_operator' => 'CONTAINS',
-          'path' => '',
-          'references_dialog_add' => 0,
-          'references_dialog_edit' => 0,
-          'references_dialog_search' => 0,
-          'references_dialog_search_view' => '',
-          'size' => '60',
-        ),
-        'type' => 'entityreference_autocomplete',
-        'weight' => '5',
-      ),
-    ),
-  );
-
   // Exported field: 'taxonomy_term-locations-field_location'.
   $fields['taxonomy_term-locations-field_location'] = array(
     'field_config' => array(
@@ -446,7 +356,6 @@ function humanitarianresponse_locations_field_default_fields() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Description');
-  t('Information Focal Points');
   t('Location');
   t('Name');
   t('PCode');
