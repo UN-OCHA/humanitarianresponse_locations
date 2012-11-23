@@ -30,7 +30,9 @@ function humanitarianresponse_locations_hxl_synchronize($pcode) {
     $country = $locations[0];
     $term = humanitarianresponse_locations_load_by_pcode($pcode);
     if (!isset($term)) {
+      $voc = taxonomy_vocabulary_machine_name_load('locations');
       $term = new stdClass();
+      $term->vid = $voc->vid;
     }
     $term->name = $country['name'];
     $term->field_location_pcode[LANGUAGE_NONE][0]['value'] = $pcode;
