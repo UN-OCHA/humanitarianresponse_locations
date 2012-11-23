@@ -28,6 +28,7 @@ function humanitarianresponse_locations_hxl_synchronize($pcode) {
   if (module_exists('hxl_api')) {
     _humanitarianresponse_locations_hxl_synchronize_by_admin_level($pcode, 0);
     _humanitarianresponse_locations_hxl_synchronize_by_admin_level($pcode, 1);
+    _humanitarianresponse_locations_hxl_synchronize_by_admin_level($pcode, 2);
   }
 }
 
