@@ -10,7 +10,7 @@ function humanitarianresponse_locations_load_by_pcode($pcode) {
   $result = $query
     ->entityCondition('entity_type', 'taxonomy_term')
     ->entityCondition('bundle', 'locations')
-    ->fieldCondition('field_location_pcode', $pcode)
+    ->fieldCondition('field_location_pcode', 'value', $pcode, '=')
     ->execute();
   if (!empty($result['taxonomy_term'])) {
     $tids = array_keys($result['taxonomy_term']);
