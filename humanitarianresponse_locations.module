@@ -35,12 +35,13 @@ function _humanitarianresponse_locations_hxl_synchronize_by_admin_level($pcode, 
     $locations = hxl_api_get_locations_by_admin_level($pcode, $level);
     foreach ($locations as $location) {
       $term = humanitarianresponse_locations_load_by_pcode($location['pcode']);
+      debug($term);
       if (!isset($term)) {
         $voc = taxonomy_vocabulary_machine_name_load('locations');
         $term = new stdClass();
         $term->vid = $voc->vid;
       }
-      $term->name = $country['name'];
+      $term->name = $location['name'];
       $term->field_location_pcode[LANGUAGE_NONE][0]['value'] = $location['pcode'];
       $term->field_location[LANGUAGE_NONE][0]['wkt'] = $location['wkt'];
       taxonomy_term_save($term);
