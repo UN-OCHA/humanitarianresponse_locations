@@ -74,9 +74,20 @@ function _humanitarianresponse_locations_hxl_synchronize_by_admin_level($pcode, 
  */
 function humanitarianresponse_locations_feeds_processor_targets_alter(&$targets, $entity_type, $bundle_name) {
   if ($entity_type == 'taxonomy_term' && $bundle_name == 'locations') {
-    $targets['my_node_field'] = array(
-      'name' => t('My custom node field'),
-      'description' => t('Description of what my custom node field does.'),
+    $targets['parent_pcode'] = array(
+      'name' => t('Parent: PCode'),
+      'description' => t('PCode of the parent term.'),
+      'callback' => 'humanitarianresponse_locations_feeds_set_target',
+      'real_target' => 'parent',
     );
   }
+}
+
+/**
+ * Callback for mapping. Here is where the actual mapping happens.
+ *
+ * @todo Do not create new terms for non-autotag fields.
+ */
+function humanitarianresponse_locations_feeds_set_target($source, $entity, $target, $terms) {
+  debug($target);
 }
