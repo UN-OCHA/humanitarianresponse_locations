@@ -39,17 +39,17 @@ function humanitarianresponse_locations_feeds_importer_default() {
           0 => array(
             'source' => 'Name',
             'target' => 'name',
-            'unique' => 1,
+            'unique' => 0,
           ),
           1 => array(
             'source' => 'Parent',
-            'target' => 'parent',
+            'target' => 'parent_pcode',
             'unique' => FALSE,
           ),
           2 => array(
             'source' => 'PCode',
             'target' => 'field_location_pcode',
-            'unique' => FALSE,
+            'unique' => 1,
           ),
           3 => array(
             'source' => 'Population',
