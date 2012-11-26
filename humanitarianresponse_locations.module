@@ -85,9 +85,15 @@ function humanitarianresponse_locations_feeds_processor_targets_alter(&$targets,
 
 /**
  * Callback for mapping. Here is where the actual mapping happens.
- *
- * @todo Do not create new terms for non-autotag fields.
  */
-function humanitarianresponse_locations_feeds_set_target($source, $entity, $target, $terms) {
-  debug($target);
+function humanitarianresponse_locations_feeds_set_target($source, $entity, $target, $value) {
+  if (empty($value)) {
+    return;
+  }
+  
+  $term = humanitarianresponse_locations_load_by_pcode($value);
+  
+  if ($term) {
+    $entity->parent[] = $term->tid;
+  }
 }
