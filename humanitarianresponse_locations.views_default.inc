@@ -166,7 +166,7 @@ function humanitarianresponse_locations_views_default_views() {
   $handler->display->display_options['fields']['field_location']['settings'] = array(
     'data' => 'full',
   );
-  $handler->display->display_options['path'] = 'locations/xls';
+  $handler->display->display_options['path'] = 'locations.xls';
   $handler->display->display_options['displays'] = array(
     'page' => 'page',
     'default' => 0,
@@ -212,7 +212,7 @@ function humanitarianresponse_locations_views_default_views() {
   $handler->display->display_options['fields']['field_location']['settings'] = array(
     'data' => 'full',
   );
-  $handler->display->display_options['path'] = 'locations/xml';
+  $handler->display->display_options['path'] = 'locations.xml';
   $handler->display->display_options['displays'] = array(
     'page' => 'page',
     'default' => 0,
