@@ -97,3 +97,12 @@ function humanitarianresponse_locations_feeds_set_target($source, $entity, $targ
     $entity->parent[] = $term->tid;
   }
 }
+
+/**
+* Implements hook_ctools_plugin_directory().
+*/
+function humanitarianresponse_locations_ctools_plugin_directory($module, $plugin) {
+  if ($module == 'feeds_tamper') {
+    return 'plugins';
+  }
+}
