@@ -8,7 +8,7 @@
 $plugin = array(
   'form' => 'humanitarianresponse_locations_pcode_to_location_form',
   'callback' => 'humanitarianresponse_locations_pcode_to_location_callback',
-  'name' => 'Convert PCodes into Locations',
+  'name' => 'PCode to Location',
   'category' => 'Other',
 );
 
