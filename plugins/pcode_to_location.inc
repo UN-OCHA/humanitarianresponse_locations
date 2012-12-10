@@ -23,9 +23,6 @@ function humanitarianresponse_locations_pcode_to_location_form($importer, $eleme
 function humanitarianresponse_locations_pcode_to_location_callback($result, $item_key, $element_key, &$field, $settings) {
   $term = humanitarianresponse_locations_load_by_pcode($field);
   if (!empty($term)) {
-    return $term->tid;
-  }
-  else {
-    return NULL;
+    $field = $term->tid;
   }
 }
