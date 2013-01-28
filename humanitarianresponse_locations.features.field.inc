@@ -33,7 +33,9 @@ function humanitarianresponse_locations_field_default_fields() {
       ),
       'locked' => '0',
       'module' => 'text',
-      'settings' => array(),
+      'settings' => array(
+        'entity_translation_sync' => FALSE,
+      ),
       'translatable' => '1',
       'type' => 'text_with_summary',
     ),
@@ -64,6 +66,7 @@ function humanitarianresponse_locations_field_default_fields() {
         'display_summary' => 0,
         'text_processing' => 1,
         'user_register_form' => FALSE,
+        'entity_translation_sync' => FALSE,
       ),
       'widget' => array(
         'module' => 'text',
@@ -89,7 +92,9 @@ function humanitarianresponse_locations_field_default_fields() {
       'indexes' => array(),
       'locked' => '0',
       'module' => 'geofield',
-      'settings' => array(),
+      'settings' => array(
+        'entity_translation_sync' => FALSE,
+      ),
       'translatable' => '0',
       'type' => 'geofield',
     ),
@@ -126,6 +131,7 @@ function humanitarianresponse_locations_field_default_fields() {
           'lng_field' => 'lng',
         ),
         'user_register_form' => FALSE,
+        'entity_translation_sync' => FALSE,
       ),
       'widget' => array(
         'active' => 1,
@@ -165,6 +171,7 @@ function humanitarianresponse_locations_field_default_fields() {
       'module' => 'text',
       'settings' => array(
         'max_length' => '255',
+        'entity_translation_sync' => FALSE,
       ),
       'translatable' => '0',
       'type' => 'text',
@@ -196,6 +203,7 @@ function humanitarianresponse_locations_field_default_fields() {
       'settings' => array(
         'text_processing' => '0',
         'user_register_form' => FALSE,
+        'entity_translation_sync' => FALSE,
       ),
       'widget' => array(
         'active' => 1,
@@ -234,6 +242,7 @@ function humanitarianresponse_locations_field_default_fields() {
       'module' => 'text',
       'settings' => array(
         'max_length' => '20',
+        'entity_translation_sync' => FALSE,
       ),
       'translatable' => '0',
       'type' => 'text',
@@ -265,6 +274,7 @@ function humanitarianresponse_locations_field_default_fields() {
       'settings' => array(
         'text_processing' => '0',
         'user_register_form' => FALSE,
+        'entity_translation_sync' => FALSE,
       ),
       'widget' => array(
         'active' => 1,
@@ -303,6 +313,7 @@ function humanitarianresponse_locations_field_default_fields() {
       'module' => 'text',
       'settings' => array(
         'max_length' => 255,
+        'entity_translation_sync' => FALSE,
       ),
       'translatable' => '1',
       'type' => 'text',
@@ -333,6 +344,7 @@ function humanitarianresponse_locations_field_default_fields() {
       'settings' => array(
         'text_processing' => 0,
         'user_register_form' => FALSE,
+        'entity_translation_sync' => FALSE,
       ),
       'widget' => array(
         'module' => 'text',
