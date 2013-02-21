@@ -14,8 +14,8 @@ function humanitarianresponse_locations_user_default_permissions() {
   $permissions['administer locations vocabulary terms'] = array(
     'name' => 'administer locations vocabulary terms',
     'roles' => array(
-      0 => 'administrator',
-      1 => 'manager',
+      'administrator' => 'administrator',
+      'manager' => 'manager',
     ),
     'module' => 'vppr',
   );
@@ -24,8 +24,8 @@ function humanitarianresponse_locations_user_default_permissions() {
   $permissions['clear csv_locations feeds'] = array(
     'name' => 'clear csv_locations feeds',
     'roles' => array(
-      0 => 'administrator',
-      1 => 'manager',
+      'administrator' => 'administrator',
+      'manager' => 'manager',
     ),
     'module' => 'feeds',
   );
@@ -34,8 +34,8 @@ function humanitarianresponse_locations_user_default_permissions() {
   $permissions['import csv_locations feeds'] = array(
     'name' => 'import csv_locations feeds',
     'roles' => array(
-      0 => 'administrator',
-      1 => 'manager',
+      'administrator' => 'administrator',
+      'manager' => 'manager',
     ),
     'module' => 'feeds',
   );
@@ -44,8 +44,8 @@ function humanitarianresponse_locations_user_default_permissions() {
   $permissions['unlock csv_locations feeds'] = array(
     'name' => 'unlock csv_locations feeds',
     'roles' => array(
-      0 => 'administrator',
-      1 => 'manager',
+      'administrator' => 'administrator',
+      'manager' => 'manager',
     ),
     'module' => 'feeds',
   );
