@@ -217,6 +217,54 @@ function humanitarianresponse_locations_views_default_views() {
     'page' => 'page',
     'default' => 0,
   );
+
+  /* Display: CSV */
+  $handler = $view->new_display('views_data_export', 'CSV', 'views_data_export_1');
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['style_plugin'] = 'views_data_export_csv';
+  $handler->display->display_options['style_options']['provide_file'] = 0;
+  $handler->display->display_options['style_options']['parent_sort'] = 0;
+  $handler->display->display_options['style_options']['quote'] = 1;
+  $handler->display->display_options['style_options']['trim'] = 0;
+  $handler->display->display_options['style_options']['replace_newlines'] = 0;
+  $handler->display->display_options['style_options']['header'] = 1;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Taxonomy term: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
+  /* Field: Taxonomy term: PCode */
+  $handler->display->display_options['fields']['field_location_pcode_1']['id'] = 'field_location_pcode_1';
+  $handler->display->display_options['fields']['field_location_pcode_1']['table'] = 'field_data_field_location_pcode';
+  $handler->display->display_options['fields']['field_location_pcode_1']['field'] = 'field_location_pcode';
+  $handler->display->display_options['fields']['field_location_pcode_1']['relationship'] = 'parent';
+  $handler->display->display_options['fields']['field_location_pcode_1']['label'] = 'Parent';
+  /* Field: Taxonomy term: PCode */
+  $handler->display->display_options['fields']['field_location_pcode']['id'] = 'field_location_pcode';
+  $handler->display->display_options['fields']['field_location_pcode']['table'] = 'field_data_field_location_pcode';
+  $handler->display->display_options['fields']['field_location_pcode']['field'] = 'field_location_pcode';
+  /* Field: Taxonomy term: Population */
+  $handler->display->display_options['fields']['field_location_pop']['id'] = 'field_location_pop';
+  $handler->display->display_options['fields']['field_location_pop']['table'] = 'field_data_field_location_pop';
+  $handler->display->display_options['fields']['field_location_pop']['field'] = 'field_location_pop';
+  /* Field: Taxonomy term: Location */
+  $handler->display->display_options['fields']['field_location']['id'] = 'field_location';
+  $handler->display->display_options['fields']['field_location']['table'] = 'field_data_field_location';
+  $handler->display->display_options['fields']['field_location']['field'] = 'field_location';
+  $handler->display->display_options['fields']['field_location']['label'] = 'WKT';
+  $handler->display->display_options['fields']['field_location']['click_sort_column'] = 'wkt';
+  $handler->display->display_options['fields']['field_location']['settings'] = array(
+    'data' => 'full',
+  );
+  $handler->display->display_options['path'] = 'locations.csv';
+  $handler->display->display_options['displays'] = array(
+    'page' => 'page',
+    'default' => 0,
+  );
   $translatables['locations'] = array(
     t('Master'),
     t('Locations'),
@@ -241,6 +289,7 @@ function humanitarianresponse_locations_views_default_views() {
     t('Page'),
     t('XLS'),
     t('XML'),
+    t('CSV'),
   );
   $export['locations'] = $view;
 
