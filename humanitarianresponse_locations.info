@@ -9,6 +9,7 @@ dependencies[] = features
 dependencies[] = feeds
 dependencies[] = field_validation
 dependencies[] = geofield
+dependencies[] = humanitarianresponse_core
 dependencies[] = strongarm
 dependencies[] = taxonomy
 dependencies[] = text
