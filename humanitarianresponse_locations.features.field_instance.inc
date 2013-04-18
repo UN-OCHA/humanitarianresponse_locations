@@ -63,6 +63,8 @@ function humanitarianresponse_locations_field_default_field_instances() {
         'module' => 'geofield',
         'settings' => array(
           'data' => 'full',
+          'diff_custom' => 0,
+          'diff_custom_settings' => array(),
         ),
         'type' => 'geofield_wkt',
         'weight' => 1,
@@ -109,7 +111,10 @@ function humanitarianresponse_locations_field_default_field_instances() {
       'default' => array(
         'label' => 'above',
         'module' => 'text',
-        'settings' => array(),
+        'settings' => array(
+          'diff_custom' => 0,
+          'diff_custom_settings' => array(),
+        ),
         'type' => 'text_default',
         'weight' => 0,
       ),
@@ -150,7 +155,10 @@ function humanitarianresponse_locations_field_default_field_instances() {
       'default' => array(
         'label' => 'above',
         'module' => 'text',
-        'settings' => array(),
+        'settings' => array(
+          'diff_custom' => 0,
+          'diff_custom_settings' => array(),
+        ),
         'type' => 'text_default',
         'weight' => 2,
       ),
@@ -178,6 +186,153 @@ function humanitarianresponse_locations_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance: 'taxonomy_term-locations-field_number_of_subdistricts'
+  $field_instances['taxonomy_term-locations-field_number_of_subdistricts'] = array(
+    'bundle' => 'locations',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Please use this field to enter number of subdistricts within a district',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'diff_custom' => 0,
+          'diff_custom_settings' => array(),
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_integer',
+        'weight' => 5,
+      ),
+      'ical' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'taxonomy_term',
+    'field_name' => 'field_number_of_subdistricts',
+    'label' => 'Number of Subdistricts',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 31,
+    ),
+  );
+
+  // Exported field_instance: 'taxonomy_term-locations-field_number_of_villages_town'
+  $field_instances['taxonomy_term-locations-field_number_of_villages_town'] = array(
+    'bundle' => 'locations',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Please input number of villages/town within a district',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'diff_custom' => 0,
+          'diff_custom_settings' => array(),
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_integer',
+        'weight' => 6,
+      ),
+      'ical' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'taxonomy_term',
+    'field_name' => 'field_number_of_villages_town',
+    'label' => 'Number of Villages/Town',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 32,
+    ),
+  );
+
+  // Exported field_instance: 'taxonomy_term-locations-field_surface_area_in_square_km'
+  $field_instances['taxonomy_term-locations-field_surface_area_in_square_km'] = array(
+    'bundle' => 'locations',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Surface are of specific location in square km',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'diff_custom' => 0,
+          'diff_custom_settings' => array(),
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_integer',
+        'weight' => 7,
+      ),
+      'ical' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'taxonomy_term',
+    'field_name' => 'field_surface_area_in_square_km',
+    'label' => 'Surface area in square km',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 33,
     ),
   );
 
@@ -225,8 +380,14 @@ function humanitarianresponse_locations_field_default_field_instances() {
   t('Description');
   t('Location');
   t('Name');
+  t('Number of Subdistricts');
+  t('Number of Villages/Town');
   t('PCode');
+  t('Please input number of villages/town within a district');
+  t('Please use this field to enter number of subdistricts within a district');
   t('Population');
+  t('Surface are of specific location in square km');
+  t('Surface area in square km');
 
   return $field_instances;
 }

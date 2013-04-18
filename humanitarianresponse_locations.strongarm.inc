@@ -28,7 +28,7 @@ function humanitarianresponse_locations_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'hs_config_taxonomy-locations';
   $strongarm->value = array(
-    'config_id' => 'taxonomy-8',
+    'config_id' => 'taxonomy-locations',
     'save_lineage' => '0',
     'enforce_deepest' => '0',
     'resizable' => '0',
@@ -36,24 +36,27 @@ function humanitarianresponse_locations_strongarm() {
       'status' => 0,
       'labels' => array(
         0 => '',
+        1 => '',
       ),
     ),
     'dropbox' => array(
-      'status' => 1,
+      'status' => 0,
       'title' => 'All selections',
-      'limit' => '0',
+      'limit' => '1',
       'reset_hs' => '1',
     ),
     'editability' => array(
       'status' => 0,
       'item_types' => array(
         0 => '',
+        1 => '',
       ),
       'allowed_levels' => array(
         0 => 1,
+        1 => 1,
       ),
       'allow_new_levels' => 0,
-      'max_levels' => '0',
+      'max_levels' => '1',
     ),
   );
   $export['hs_config_taxonomy-locations'] = $strongarm;
