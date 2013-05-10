@@ -63,8 +63,6 @@ function humanitarianresponse_locations_field_default_field_instances() {
         'module' => 'geofield',
         'settings' => array(
           'data' => 'full',
-          'diff_custom' => 0,
-          'diff_custom_settings' => array(),
         ),
         'type' => 'geofield_wkt',
         'weight' => 1,
@@ -111,10 +109,7 @@ function humanitarianresponse_locations_field_default_field_instances() {
       'default' => array(
         'label' => 'above',
         'module' => 'text',
-        'settings' => array(
-          'diff_custom' => 0,
-          'diff_custom_settings' => array(),
-        ),
+        'settings' => array(),
         'type' => 'text_default',
         'weight' => 0,
       ),
@@ -155,10 +150,7 @@ function humanitarianresponse_locations_field_default_field_instances() {
       'default' => array(
         'label' => 'above',
         'module' => 'text',
-        'settings' => array(
-          'diff_custom' => 0,
-          'diff_custom_settings' => array(),
-        ),
+        'settings' => array(),
         'type' => 'text_default',
         'weight' => 2,
       ),
@@ -250,8 +242,6 @@ function humanitarianresponse_locations_field_default_field_instances() {
         'module' => 'number',
         'settings' => array(
           'decimal_separator' => '.',
-          'diff_custom' => 0,
-          'diff_custom_settings' => array(),
           'prefix_suffix' => TRUE,
           'scale' => 0,
           'thousand_separator' => ' ',
@@ -299,8 +289,6 @@ function humanitarianresponse_locations_field_default_field_instances() {
         'module' => 'number',
         'settings' => array(
           'decimal_separator' => '.',
-          'diff_custom' => 0,
-          'diff_custom_settings' => array(),
           'prefix_suffix' => TRUE,
           'scale' => 0,
           'thousand_separator' => ' ',
