@@ -122,10 +122,108 @@ function humanitarianresponse_locations_views_default_views() {
     'locations' => 'locations',
   );
 
-  /* Display: Page */
-  $handler = $view->new_display('page', 'Page', 'page');
+  /* Display: Master */
+  $handler = $view->new_display('page', 'Master', 'page');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Taxonomy term: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
+  /* Field: Taxonomy term: PCode */
+  $handler->display->display_options['fields']['field_location_pcode']['id'] = 'field_location_pcode';
+  $handler->display->display_options['fields']['field_location_pcode']['table'] = 'field_data_field_location_pcode';
+  $handler->display->display_options['fields']['field_location_pcode']['field'] = 'field_location_pcode';
   $handler->display->display_options['path'] = 'locations';
+
+  /* Display: Table */
+  $handler = $view->new_display('page', 'Table', 'page_1');
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Taxonomy term: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
+  /* Field: Taxonomy term: PCode */
+  $handler->display->display_options['fields']['field_location_pcode']['id'] = 'field_location_pcode';
+  $handler->display->display_options['fields']['field_location_pcode']['table'] = 'field_data_field_location_pcode';
+  $handler->display->display_options['fields']['field_location_pcode']['field'] = 'field_location_pcode';
+  $handler->display->display_options['path'] = 'locations/table';
+  $handler->display->display_options['menu']['type'] = 'default tab';
+  $handler->display->display_options['menu']['title'] = 'Table';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
+  $handler->display->display_options['tab_options']['weight'] = '0';
+
+  /* Display: Map Data */
+  $handler = $view->new_display('openlayers', 'Map Data', 'map_data');
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'openlayers_data';
+  $handler->display->display_options['style_options']['data_source'] = array(
+    'value' => 'wkt',
+    'other_lat' => 'name',
+    'other_lon' => 'name',
+    'wkt' => 'field_location',
+    'other_top' => 'name',
+    'other_right' => 'name',
+    'other_bottom' => 'name',
+    'other_left' => 'name',
+    'name_field' => 'name',
+    'description_field' => 'field_location_pcode',
+    'style_field' => '',
+  );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Taxonomy term: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  /* Field: Taxonomy term: PCode */
+  $handler->display->display_options['fields']['field_location_pcode']['id'] = 'field_location_pcode';
+  $handler->display->display_options['fields']['field_location_pcode']['table'] = 'field_data_field_location_pcode';
+  $handler->display->display_options['fields']['field_location_pcode']['field'] = 'field_location_pcode';
+  /* Field: Taxonomy term: Location */
+  $handler->display->display_options['fields']['field_location']['id'] = 'field_location';
+  $handler->display->display_options['fields']['field_location']['table'] = 'field_data_field_location';
+  $handler->display->display_options['fields']['field_location']['field'] = 'field_location';
+  $handler->display->display_options['fields']['field_location']['label'] = 'WKT';
+  $handler->display->display_options['fields']['field_location']['click_sort_column'] = 'wkt';
+  $handler->display->display_options['fields']['field_location']['settings'] = array(
+    'data' => 'full',
+  );
+
+  /* Display: Map */
+  $handler = $view->new_display('page', 'Map', 'map');
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'openlayers_map';
+  $handler->display->display_options['style_options']['map'] = 'locations';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['path'] = 'locations/map';
+  $handler->display->display_options['menu']['type'] = 'tab';
+  $handler->display->display_options['menu']['title'] = 'Map';
+  $handler->display->display_options['menu']['weight'] = '5';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
 
   /* Display: XLS */
   $handler = $view->new_display('views_data_export', 'XLS', 'xls');
@@ -166,53 +264,7 @@ function humanitarianresponse_locations_views_default_views() {
   $handler->display->display_options['fields']['field_location']['settings'] = array(
     'data' => 'full',
   );
-  $handler->display->display_options['path'] = 'locations.xls';
-  $handler->display->display_options['displays'] = array(
-    'page' => 'page',
-    'default' => 0,
-  );
-
-  /* Display: XML */
-  $handler = $view->new_display('views_data_export', 'XML', 'xml');
-  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'none';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['style_plugin'] = 'views_data_export_xml';
-  $handler->display->display_options['style_options']['provide_file'] = 0;
-  $handler->display->display_options['style_options']['parent_sort'] = 0;
-  $handler->display->display_options['style_options']['transform'] = 1;
-  $handler->display->display_options['style_options']['transform_type'] = 'pascal';
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Taxonomy term: Name */
-  $handler->display->display_options['fields']['name']['id'] = 'name';
-  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['fields']['name']['field'] = 'name';
-  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
-  /* Field: Taxonomy term: PCode */
-  $handler->display->display_options['fields']['field_location_pcode_1']['id'] = 'field_location_pcode_1';
-  $handler->display->display_options['fields']['field_location_pcode_1']['table'] = 'field_data_field_location_pcode';
-  $handler->display->display_options['fields']['field_location_pcode_1']['field'] = 'field_location_pcode';
-  $handler->display->display_options['fields']['field_location_pcode_1']['relationship'] = 'parent';
-  $handler->display->display_options['fields']['field_location_pcode_1']['label'] = 'Parent';
-  /* Field: Taxonomy term: PCode */
-  $handler->display->display_options['fields']['field_location_pcode']['id'] = 'field_location_pcode';
-  $handler->display->display_options['fields']['field_location_pcode']['table'] = 'field_data_field_location_pcode';
-  $handler->display->display_options['fields']['field_location_pcode']['field'] = 'field_location_pcode';
-  /* Field: Taxonomy term: Population */
-  $handler->display->display_options['fields']['field_location_pop']['id'] = 'field_location_pop';
-  $handler->display->display_options['fields']['field_location_pop']['table'] = 'field_data_field_location_pop';
-  $handler->display->display_options['fields']['field_location_pop']['field'] = 'field_location_pop';
-  /* Field: Taxonomy term: Location */
-  $handler->display->display_options['fields']['field_location']['id'] = 'field_location';
-  $handler->display->display_options['fields']['field_location']['table'] = 'field_data_field_location';
-  $handler->display->display_options['fields']['field_location']['field'] = 'field_location';
-  $handler->display->display_options['fields']['field_location']['label'] = 'WKT';
-  $handler->display->display_options['fields']['field_location']['click_sort_column'] = 'wkt';
-  $handler->display->display_options['fields']['field_location']['settings'] = array(
-    'data' => 'full',
-  );
-  $handler->display->display_options['path'] = 'locations.xml';
+  $handler->display->display_options['path'] = 'locations/xls';
   $handler->display->display_options['displays'] = array(
     'page' => 'page',
     'default' => 0,
@@ -260,7 +312,53 @@ function humanitarianresponse_locations_views_default_views() {
   $handler->display->display_options['fields']['field_location']['settings'] = array(
     'data' => 'full',
   );
-  $handler->display->display_options['path'] = 'locations.csv';
+  $handler->display->display_options['path'] = 'locations/csv';
+  $handler->display->display_options['displays'] = array(
+    'page' => 'page',
+    'default' => 0,
+  );
+
+  /* Display: XML */
+  $handler = $view->new_display('views_data_export', 'XML', 'xml');
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['style_plugin'] = 'views_data_export_xml';
+  $handler->display->display_options['style_options']['provide_file'] = 0;
+  $handler->display->display_options['style_options']['parent_sort'] = 0;
+  $handler->display->display_options['style_options']['transform'] = 1;
+  $handler->display->display_options['style_options']['transform_type'] = 'pascal';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Taxonomy term: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
+  /* Field: Taxonomy term: PCode */
+  $handler->display->display_options['fields']['field_location_pcode_1']['id'] = 'field_location_pcode_1';
+  $handler->display->display_options['fields']['field_location_pcode_1']['table'] = 'field_data_field_location_pcode';
+  $handler->display->display_options['fields']['field_location_pcode_1']['field'] = 'field_location_pcode';
+  $handler->display->display_options['fields']['field_location_pcode_1']['relationship'] = 'parent';
+  $handler->display->display_options['fields']['field_location_pcode_1']['label'] = 'Parent';
+  /* Field: Taxonomy term: PCode */
+  $handler->display->display_options['fields']['field_location_pcode']['id'] = 'field_location_pcode';
+  $handler->display->display_options['fields']['field_location_pcode']['table'] = 'field_data_field_location_pcode';
+  $handler->display->display_options['fields']['field_location_pcode']['field'] = 'field_location_pcode';
+  /* Field: Taxonomy term: Population */
+  $handler->display->display_options['fields']['field_location_pop']['id'] = 'field_location_pop';
+  $handler->display->display_options['fields']['field_location_pop']['table'] = 'field_data_field_location_pop';
+  $handler->display->display_options['fields']['field_location_pop']['field'] = 'field_location_pop';
+  /* Field: Taxonomy term: Location */
+  $handler->display->display_options['fields']['field_location']['id'] = 'field_location';
+  $handler->display->display_options['fields']['field_location']['table'] = 'field_data_field_location';
+  $handler->display->display_options['fields']['field_location']['field'] = 'field_location';
+  $handler->display->display_options['fields']['field_location']['label'] = 'WKT';
+  $handler->display->display_options['fields']['field_location']['click_sort_column'] = 'wkt';
+  $handler->display->display_options['fields']['field_location']['settings'] = array(
+    'data' => 'full',
+  );
+  $handler->display->display_options['path'] = 'locations/xml';
   $handler->display->display_options['displays'] = array(
     'page' => 'page',
     'default' => 0,
@@ -293,6 +391,20 @@ function humanitarianresponse_locations_views_default_views() {
   $handler->display->display_options['sorts']['name']['id'] = 'name';
   $handler->display->display_options['sorts']['name']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['sorts']['name']['field'] = 'name';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Taxonomy vocabulary: Machine name */
+  $handler->display->display_options['filters']['machine_name']['id'] = 'machine_name';
+  $handler->display->display_options['filters']['machine_name']['table'] = 'taxonomy_vocabulary';
+  $handler->display->display_options['filters']['machine_name']['field'] = 'machine_name';
+  $handler->display->display_options['filters']['machine_name']['value'] = array(
+    'locations' => 'locations',
+  );
+  /* Filter criterion: Taxonomy term: Parent term */
+  $handler->display->display_options['filters']['parent']['id'] = 'parent';
+  $handler->display->display_options['filters']['parent']['table'] = 'taxonomy_term_hierarchy';
+  $handler->display->display_options['filters']['parent']['field'] = 'parent';
+  $handler->display->display_options['filters']['parent']['value']['value'] = '0';
   $handler->display->display_options['block_description'] = 'Locations';
   $translatables['locations'] = array(
     t('Master'),
@@ -315,10 +427,12 @@ function humanitarianresponse_locations_views_default_views() {
     t('PCode'),
     t('Population'),
     t('WKT'),
-    t('Page'),
+    t('Table'),
+    t('Map Data'),
+    t('Map'),
     t('XLS'),
-    t('XML'),
     t('CSV'),
+    t('XML'),
     t('Block'),
   );
   $export['locations'] = $view;
