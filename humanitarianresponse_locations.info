@@ -27,6 +27,7 @@ features[ctools][] = strongarm:strongarm:1
 features[ctools][] = views:views_default:3.0
 features[features_api][] = api:2
 features[feeds_importer][] = csv_locations
+features[feeds_importer][] = csv_locations_geonode
 features[field_base][] = field_location
 features[field_base][] = field_location_pcode
 features[field_base][] = field_location_pop
