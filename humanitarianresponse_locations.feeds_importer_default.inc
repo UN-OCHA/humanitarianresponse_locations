@@ -22,6 +22,11 @@ function humanitarianresponse_locations_feeds_importer_default() {
       'config' => array(
         'allowed_extensions' => 'txt csv tsv xml opml',
         'direct' => FALSE,
+        'directory' => 'private://feeds',
+        'allowed_schemes' => array(
+          0 => 'public',
+          1 => 'private',
+        ),
       ),
     ),
     'parser' => array(
@@ -52,11 +57,16 @@ function humanitarianresponse_locations_feeds_importer_default() {
             'unique' => 1,
           ),
           3 => array(
+            'source' => 'Local PCode',
+            'target' => 'field_local_pcode',
+            'unique' => FALSE,
+          ),
+          4 => array(
             'source' => 'Population',
             'target' => 'field_location_pop',
             'unique' => FALSE,
           ),
-          4 => array(
+          5 => array(
             'source' => 'WKT',
             'target' => 'field_location:wkt',
             'unique' => FALSE,
@@ -65,6 +75,7 @@ function humanitarianresponse_locations_feeds_importer_default() {
         'update_existing' => '2',
         'input_format' => 'plain_text',
         'skip_hash_check' => 0,
+        'vocabulary' => 0,
       ),
     ),
     'content_type' => '',
