@@ -36,6 +36,9 @@ function humanitarianresponse_locations_strongarm() {
       'status' => 0,
       'labels' => array(
         0 => '',
+        1 => '',
+        2 => '',
+        3 => '',
       ),
     ),
     'dropbox' => array(
@@ -48,9 +51,15 @@ function humanitarianresponse_locations_strongarm() {
       'status' => 0,
       'item_types' => array(
         0 => '',
+        1 => '',
+        2 => '',
+        3 => '',
       ),
       'allowed_levels' => array(
         0 => 1,
+        1 => 1,
+        2 => 1,
+        3 => 1,
       ),
       'allow_new_levels' => 0,
       'max_levels' => '0',
